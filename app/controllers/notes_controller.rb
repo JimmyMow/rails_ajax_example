@@ -19,6 +19,7 @@ class NotesController < ApplicationController
 
   # GET /notes/1/edit
   def edit
+
   end
 
   # POST /notes
@@ -44,6 +45,7 @@ class NotesController < ApplicationController
       if @note.update(note_params)
         format.html { redirect_to @note, notice: 'Note was successfully updated.' }
         format.json { render :show, status: :ok, location: @note }
+        format.js
       else
         format.html { render :edit }
         format.json { render json: @note.errors, status: :unprocessable_entity }

@@ -1,0 +1,3 @@
+$("#edit_note_" + <%= @note.id %>).replaceWith("<%= j(render 'content', note: @note) %>");
+// JS debug
+// $("#edit_note_" + <%= @note.id %>).css('background-color', 'red');

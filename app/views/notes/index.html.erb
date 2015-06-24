@@ -1,6 +1,6 @@
 <h1>Listing notes</h1>
 
-<table>
+<table class='table'>
   <thead>
     <tr>
       <th>Content</th>
@@ -8,12 +8,12 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody id="tbody">
     <% @notes.each do |note| %>
-      <tr>
-        <td><%= note.content %></td>
+      <tr id="note-<%= note.id %>">
+        <td id="content-<%= note.id %>"><%= note.content %></td>
         <td><%= link_to 'Show', note %></td>
-        <td><%= link_to 'Edit', edit_note_path(note) %></td>
+        <td><%= link_to 'Edit', edit_note_path(note), remote: true %></td>
         <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -23,3 +23,4 @@
 <br>
 
 <%= link_to 'New Note', new_note_path %>
+
